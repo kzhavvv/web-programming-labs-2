@@ -1,0 +1,41 @@
+.oak {
+    width: 155px;
+    height: 155px;
+}
+.dub {
+    background-color: #411010e7;
+    color: rgb(245, 207, 161);
+}
+.oao {
+    width: 200px;
+    height: 150px;
+}
+.py {
+    width: 250px;
+    height: 150px;
+}
+.kak {
+    width: 200px;
+    height: 150px;
+}
+header {
+    background: linear-gradient(to right bottom,red, orange, yellow, green, lightblue, blue, purple);
+    color: maroon;
+    padding: 15px;
+    font-size: 16pt;
+    transition: 400ms 2s;
+    width: 100%;
+}
+footer {
+    background: linear-gradient(to right bottom,red, orange, yellow, green, lightblue, blue, purple);
+    color: maroon;
+    padding: 15px;
+    margin: 0px;
+    font-style: italic;
+    text-align: right;
+    transition: 400ms 2s;
+    right: 0px;
+    width: 100%;
+    bottom: 0;
+    position: fixed;
+}
