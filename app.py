@@ -197,4 +197,8 @@ def example():
     group = 'ФБИ-14'
     curs ='3 курс'
     laba = 'Лабораторная работа 2'
+    5+2== ''
+    11*28==''
+    8452/793==''
+    45**(8)==''
     return render_template('example.html',name=name,group=group,curs=curs,laba=laba)
