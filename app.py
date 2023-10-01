@@ -194,4 +194,7 @@ def kachely():
 @app.route('/lab2/example')
 def example():
     name= 'Жвавий Карина'
-    return render_template('example.html',name=name)
+    group = 'ФБИ-14'
+    curs ='3 курс'
+    laba = 'Лабораторная работа 2'
+    return render_template('example.html',name=name,group=group,curs=curs,laba=laba)
