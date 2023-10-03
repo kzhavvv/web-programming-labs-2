@@ -201,4 +201,11 @@ def example():
     11*28==''
     8452/793==''
     45**(8)==''
-    return render_template('example.html',name=name,group=group,curs=curs,laba=laba)
+    fruits = [
+        {'name':'яблоки', 'price': 100},
+        {'name':'груши', 'price': 120},
+        {'name':'апельсины', 'price': 80}, 
+        {'name':'мандарины', 'price': 95},
+        {'name':'манго', 'price': 321}
+        ]
+    return render_template('example.html',name=name,group=group,curs=curs,laba=laba,fruits=fruits)
