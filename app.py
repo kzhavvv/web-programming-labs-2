@@ -221,3 +221,6 @@ def example():
         {'bk': 'Дневник Анны Франк', 'autor': 'Анна Франк', 'genre': 'мемуар','pages': 280 }
     ]
     return render_template('example.html',name=name,group=group,curs=curs,laba=laba,fruits=fruits,books=books)
+@app.route('/lab2/')
+def lab2():
+    return render_template(lab2)
