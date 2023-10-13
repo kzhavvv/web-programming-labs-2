@@ -1,9 +1,18 @@
 {% extends "base.html" %}
 
 {% block maink %}
-    <a src="egor.jpg"></a>
-    <a src="ek1.jpg"></a>
-    <a src="ek2.jpg"></a>
-    <a src="ek3.jpg"></a>
-    <a srs="ek4.jpg"></a>
+    <div style="margin-bottom: 80px;">
+    <div style="text-align:center;"><img src="{{ url_for('static', filename='kr1.jpg') }}" style="height: 250px; width: 300px;" ></div>
+    <div style="text-align:center; font-size: 20px;">Богатый Егор Крид</div>
+    <div style="text-align:center;"><img src="{{url_for('static', filename='kr2.jpg')}}"style="text-align:center; height: 400px; width: 300px;"></div>
+    <div style="text-align:center; font-size: 20px;">Картонный Егор Крид</div>
+    <div style="text-align:center;"><img src="{{url_for('static', filename='ek2.jpg')}}"style="text-align:center; height: 300px; width: 300px;"></div>
+    <div style="text-align:center; font-size: 20px;">Задумчивый Егор Крид</div>
+    <div style="text-align:center;"><img src="{{url_for('static', filename='kr3.jpg')}}"style="text-align: center; height: 300px; width: 300px;"></div>
+    <div style="text-align:center; font-size: 20px;">Холостой Егор Крид</div>
+    <div style="text-align:center;"><img src="{{url_for('static', filename='ek.jpg')}}"style="text-align:center; height: 250px; width: 300px;"></div>
+    <div style="text-align:center;font-size: 20px;" >Егор Крид Пусси бой</div>
+    <div style="text-align:center;"><img src="{{url_for('static', filename='ek3.jpg')}}"style="text-align:center; height: 300px; width: 300px;"></div>
+    <div style="text-align:center; font-size: 20px;">Домашний Егор Крид</div>
+    </div>
 {% endblock %}
