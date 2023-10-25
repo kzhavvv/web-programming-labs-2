@@ -39,3 +39,8 @@ footer {
     bottom: 0;
     position: fixed;
 }
+body {
+    margin: 0;
+    overflow-x: hidden;
+    margin-bottom: 100px;
+}
