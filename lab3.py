@@ -49,3 +49,28 @@ def pay():
 @lab3.route('/lab3/success')
 def success():
     return render_template('success.html')
+
+
+@lab3.route('/lab3/bilet')
+def bilet():
+    errors={}
+    user = request.args.get('user')
+    if user == '':
+        errors['user'] = 'Заполните поле!'
+    errorss={}
+    age = request.args.get('age')
+    if age == '':
+        errorss['age'] = 'Заполните поле!'
+    city = request.args.get('city')
+    if city == '':
+        errorss['city'] = 'Заполните поле!'
+    date = request.args.get('date')
+    if date == '':
+        errorss['date'] = 'Заполните поле!'
+
+    return render_template('bilet.html',user=user, age=age, errors=errors, errorss=errorss,city=city,date=date )
+
+
+@lab3.route('/lab3/kupleno')
+def kupleno():
+    return render_template('kupleno.html')

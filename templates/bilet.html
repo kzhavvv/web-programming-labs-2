@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block lab %}Лабораторная работа 3{% endblock %}
+
+{% block main %}
+
+    <h1>Билеты на поезд</h1>
+
+    <form action="/lab3/kupleno">
+        <label>Ваше ФИО:</label>
+        <div>
+            <input type="text" placeholder="как вас зовут?" name="user" value="{{ user or ''}}">
+            <span class="error">{{errors.user}}</span>
+        </div>
+        <label>Ваш возраст:</label>
+        <div>
+            <input type="number" name="age" value="{{ age or ''}}" min="18" max="120">
+            <span class="error">{{errorss.age}}</span>
+        </div>
+        <label>Тип билета:</label>
+        <div>
+            <select name="type">
+                <option value="adult" {{sex == 'adult' and 'selected' }}>взрослый</option>
+                <option value="child" {{sex == 'child' and 'selected'}} >детский</option>
+            </select>
+        </div>
+
+        <label>Наличие багажа:</label>
+        <div>
+            <select name="bag">
+                <option value="yes" {{bag == 'yes' and 'selected' }}>с багажом</option>
+                <option value="not" {{bag == 'not' and 'selected'}} >без багажа</option>
+            </select>
+        </div>
+
+        <div>Полка:</div>
+        <label>
+            <input type="radio" value="cofee" name="drink" checked>нижняя
+        </label>
+
+        <br><label>
+            <input type="radio" value="black-tea" name="drink">верхняя
+        </label>
+
+        <br><label>
+            <input type="radio" value="green-tea" name="drink">нижняя боковая
+        </label>
+
+        <br><label>
+            <input type="radio" value="green-tea" name="drink">верхняя боковая
+        </label>
+
+        <br><label>Пункт выезда:</label>
+        <div>
+            <input type="text" placeholder="город отправления" name="city" value="{{ city or ''}}">
+            <span class="error">{{errors.user}}</span>
+        </div>
+
+        <label>Пункт назначения:</label>
+        <div>
+            <input type="text" placeholder="город назначения" name="city" value="{{ city or ''}}">
+            <span class="error">{{errors.user}}</span>
+        </div>
+
+        <div>
+            <label>Дата отправления: <input type="date"></label>
+        </div>
+        <br><div id="days" name="date">
+            <span class="error">{{errors.user}}</span>
+        </div>
+
+        <div>
+            <button type="submit">Купить</button>
+        </div>
+    </form>
+{% endblock %}
