@@ -1,3 +1,4 @@
+from werkzeug.security import check_password_hash, generate_password_hash
 from flask import Blueprint, render_template, request, session, redirect, url_for
 import psycopg2
 
@@ -53,21 +54,25 @@ def reg():
         print(errors)
         return render_template('reg.html', errors=errors)
     
+    hashPassword = generate_password_hash(password)
+
     conn = dbConnect()
     cur = conn.cursor()
 
-    cur.execute(f"SELECT username FROM users WHERE username = '{user_name}';")
+    cur.execute("SELECT username FROM users WHERE username = %s;", (user_name,))
 
     if cur.fetchone() is not None:
         errors.append("Пользователь с данным именем уже существует")
-        dbClose(cur, conn)
+
+        conn.close()
+        cur.close()
         return render_template('reg.html', errors=errors)
     
-    cur.execute(f"INSERT INTO users (username, password) VALUES ('{user_name}', '{password}');")
+    cur.execute("INSERT INTO users (username, password) VALUES (%s, %s);", (user_name, hashPassword))
     
     conn.commit()
-    dbClose(cur, conn)
-
+    conn.close()
+    cur.close()
     return redirect("/lab5/loginn")
 
 
