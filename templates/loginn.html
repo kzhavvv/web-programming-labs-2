@@ -3,6 +3,28 @@
 {% block lab %} Лабораторная работа 5 {% endblock %}
 
 {% block main %}
-    <a href ="/lab5/">на главную</a>
-    <br><a href ="/lab5/reg">к странице регистрации</a>
+
+    <h2>Пожалуйста, авторизуйтесь</h2>
+    <div>
+        {% for error in errors %}
+            {{ error }}
+        {% endfor %}
+    </div>
+    <form method="post">
+        <div>
+            <label for="username">Пользователь</label>
+            <input type="text" id="username" name="username" value="{{ username or '' }}">
+        </div>
+        <div>
+            <label for="password">Пароль</label>
+            <input type="password" id="password" name="password" value="{{ password or '' }}">
+        </div>
+        <div>
+            <button type="submit">Войти</button>
+            <button type="reset">Отмена</button>
+        </div>
+
+        <a href ="/lab5/">на главную</a>
+        <br><a href ="/lab5/reg">к странице регистрации</a>
+    </form>
 {% endblock %}
