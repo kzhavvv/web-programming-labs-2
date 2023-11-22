@@ -198,3 +198,8 @@ def list_articles():
         return render_template('articles.html', articles=articles, user_name=user_name)
 
     return redirect("/lab5/login5")
+
+@lab5.route('/lab5/logout', methods=["GET"])
+def logout():
+    session.clear()
+    return redirect("/lab5/loginn")
