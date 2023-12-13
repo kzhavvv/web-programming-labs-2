@@ -15,12 +15,12 @@ from lab6 import lab6
 
 app = Flask(__name__)
 
-app.secret_key = "123"
-user_db = "karina_knowledge_base_orm"
+app.secret_key = "321"
+user_db = "admin_knowledgee_base_orm"
 host_ip = "127.0.0.1"
 host_port = "5432"
-database_name = "knowledge_base_orm"
-password = "123"
+database_name = "knowledgee_base_orm"
+password = "321"
 
 app.config['SQLALCHEMY_DATABASE_URI'] = f'postgresql://{user_db}:{password}@{host_ip}:{host_port}/{database_name}'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False 
