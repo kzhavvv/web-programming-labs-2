@@ -8,9 +8,9 @@ def main():
     return render_template('lab8/index.html')
 
 courses = [
-    {"name": "C++", "videos": 3, "price": 3000},
-    {"name": "basic", "videos": 30, "price": 0},
-    {"name": "C#", "videos": 8}
+    {"name": "C++", "videos": 3, "price": 3000, "createdAt": "2023-12-12"},
+    {"name": "basic", "videos": 30, "price": 0, "createdAt": "2023-12-17"},
+    {"name": "C#", "videos": 8,  "price": 0, "createdAt": "2023-12-15"}
 
 ]
 
