@@ -21,9 +21,6 @@ function fillGoodList() {
             let tdPrice = document.createElement('td');
             tdPrice.innerText = goods[i].price;
 
-            let tdCreatedAt = document.createElement('td'); // Добавляем элемент для даты создания
-            tdCreatedAt.innerText = new Date(goods[i].createdAt).toLocaleDateString();
-
             let editButton = document.createElement('button');
             editButton.innerText = 'редактировать';
             editButton.onclick = function() {
@@ -45,7 +42,6 @@ function fillGoodList() {
             tr.append(tdPrice);
             tr.append(tdArt);
             tr.append(tdActions);
-            tr.append(tdCreatedAt); // Добавляем ячейку с датой создания
 
             tbody.append(tr);
         }
@@ -79,7 +75,6 @@ function addGood() {
 
 function addGood() {
     const good = {}; // Добавляем переменную goods
-    delete good.createdAt;
     document.getElementById('num').value = '';
     document.getElementById('name').value = '';
     document.getElementById('art').value = '';
@@ -94,8 +89,7 @@ function sendGood() {
         name: document.getElementById('name').value,
         art: document.getElementById('art').value,
         count: document.getElementById('count').value,
-        price: document.getElementById('price').value,
-        createdAt: new Date().toString()
+        price: document.getElementById('price').value
     };
 
     const url = `/rgz/api/goods/${num}`;
@@ -119,6 +113,5 @@ function editGood(num, good) {
     document.getElementById('art').value = good.art;
     document.getElementById('count').value = good.count;
     document.getElementById('price').value = good.price;
-    delete good.createdAt;
     showModal();
 }

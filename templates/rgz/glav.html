@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block lab %} Расчетно-графическое задание {% endblock %}
+
+{% block main %}
+    <div class="glav_verh">
+        <div style="display: inline;
+                    color: rgb(75, 75, 251);
+                    height: 30px;
+                    font-size: 16pt;
+                    font-weight: bold;
+                    ">
+        База товаров
+        </div>
+        <div class="zam1"><a href="/rgz/index">Посмотреть список товаров</a></div>
+        <form action="/rgz/login">
+            <button class="b1" type="submit">Логин</button>
+        </form>
+        <form style="margin-left: 2%;" action="/rgz/registr">
+            <button class="b2" type="submit">Регистрация</button>
+        </form>
+        <form style="margin-left: 2%;" method="POST" action="/rgz/logout">
+            <button class="b2" type="submit">Выход</button>
+        </form>
+
+        {% if current_user.username  %}
+            <div style="font-weight: bold;
+            margin-left: 1%;" 
+            >
+            {{ current_user.username  }}</div>
+        {% else %}
+            <div style="font-weight: bold;">Anon</div>
+        {% endif %}
+    </div>
+
+{% endblock %}

@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block lab %} Расчетно-графическое задание {% endblock %}
+
+{% block main %}
+    <div class="ramka">
+    
+        <form method="post">
+            <h1 style="text-align: center;">Пожалуйста, пройдите регистрацию</h1>
+
+            <div>
+                <input  class="pole_tiket" type="text" name="username" placeholder="username">
+                <label for="username">Логин</label>
+            </div>
+
+            <div>
+                <input  class="pole_tiket" type="text" name="password" placeholder="password">
+                <label for="password">Пароль</label>
+            </div>
+            
+            {% for error in errors %}
+                {{ error }}
+            {% endfor %}
+
+            <button style="height: 30px;
+            color: blueviolet;
+            background-color: white;
+            font-size: 12pt;
+            font-weight: bold;
+            border: 2px blueviolet solid;
+            border-radius: 5px;
+            margin-left: 34%;" class="pole_tiket" type="submit">Зарегистрироваться</button>
+        </form>
+
+    </div>
+
+{% endblock %}
